@@ -76,8 +76,8 @@ print(model.summary())
 
 from keras.preprocessing.image import ImageDataGenerator
 
-train_data_dir = 'D:/MLOps training/Practice/face/train/'
-validation_data_dir = 'D:/MLOps training/Practice/face/validation/'
+train_data_dir = 'path_to_training_data'
+validation_data_dir = 'path_to_testing_data'
 
 # Let's use some data augmentaiton 
 train_datagen = ImageDataGenerator(
@@ -175,9 +175,9 @@ import numpy as np
 from os import listdir
 from os.path import isfile, join
 
-face_recog_dict = {"[0]": "Gaurav Goyal", 
+face_recog_dict = {"[0]": "Gaurav Goyal", //my name
                       "[1]": "Not Gaurav Goyal"}
-
+# these are basically the number of folders i have in my testing and training set.
 face_recog_dict_n = {"n0": "Gaurav Goyal", 
                       "n1": "Not Gaurav Goyal"}
 
@@ -201,7 +201,7 @@ def getRandomImage(path):
     return cv2.imread(file_path+"/"+image_name)    
 
 for i in range(0,10):
-    input_im = getRandomImage("D:/MLOps training/Practice/face/validation/")
+    input_im = getRandomImage("path_to_testing_data")
     input_original = input_im.copy()
     input_original = cv2.resize(input_original, None, fx=0.5, fy=0.5, interpolation = cv2.INTER_LINEAR)
     
@@ -217,22 +217,3 @@ for i in range(0,10):
     cv2.waitKey(0)
 
 cv2.destroyAllWindows()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
